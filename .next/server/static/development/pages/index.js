@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,22 +104,75 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+const Link = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
+  displayName: "Header__Link",
+  componentId: "sc-1wypvh0-0"
+})(["color:white !important;&:hover{color:#d4d4d4 !important;}"]);
 
 const Header = () => {
-  return __jsx("div", null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  return __jsx("nav", {
+    className: "navbar navbar-expand-lg navbar-dark bg-primary"
+  }, __jsx("a", {
+    className: "navbar-brand",
     href: "/"
-  }, __jsx("a", {
-    title: "Home"
-  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about"
-  }, __jsx("a", {
-    title: "About"
-  }, "About")));
+  }, __jsx("img", {
+    src: "/img/btc-logo.svg",
+    width: "110",
+    height: "50",
+    className: "d-inline-block align-top",
+    alt: ""
+  })), __jsx("button", {
+    className: "navbar-toggler",
+    type: "button",
+    "data-toggle": "collapse",
+    "data-target": "#navbarTogglerDemo03",
+    "aria-controls": "navbarTogglerDemo03",
+    "aria-expanded": "false",
+    "aria-label": "Toggle navigation"
+  }, __jsx("span", {
+    className: "navbar-toggler-icon"
+  })), __jsx("div", {
+    className: "collapse navbar-collapse",
+    id: "navbarTogglerDemo03"
+  }, __jsx("ul", {
+    className: "navbar-nav m-auto mt-2 mt-lg-0"
+  }, __jsx("li", {
+    className: "nav-item"
+  }, __jsx(Link, {
+    className: "nav-link text-center",
+    href: "#"
+  }, "ABOUT US")), __jsx("li", {
+    className: "nav-item"
+  }, __jsx(Link, {
+    className: "nav-link text-center",
+    href: "#"
+  }, "WHO WE SERVE")), __jsx("li", {
+    className: "nav-item"
+  }, __jsx(Link, {
+    className: "nav-link text-center",
+    href: "#"
+  }, "SERVICES")), __jsx("li", {
+    className: "nav-item"
+  }, __jsx(Link, {
+    className: "nav-link text-center",
+    href: "#"
+  }, "WHY US")), __jsx("li", {
+    className: "nav-item"
+  }, __jsx(Link, {
+    className: "nav-link text-center",
+    href: "#"
+  }, "PLATFORM"))), __jsx("span", {
+    class: "navbar-text float-right"
+  }, __jsx(Link, {
+    className: "lang"
+  }, "\u7E41"), "\uFF5C", __jsx(Link, {
+    className: "lang"
+  }, "Eng"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -138,16 +191,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
-/* harmony import */ var _scss_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/Layout.module.scss */ "./scss/Layout.module.scss");
-/* harmony import */ var _scss_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import scss from '../css/Layout.module.css';
 
-
-
-const Layout = props => __jsx("div", {
-  className: _scss_Layout_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.layout
-}, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), props.children);
+const Layout = props => __jsx("div", null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx("div", {
+  className: "container-fluid"
+}, props.children));
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -1844,35 +1894,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main */ "./pages/main.js");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-const Index = props => __jsx("div", {
-  className: "layout"
-}, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], null, __jsx("h1", null, "BTCEX PRO")));
+
+const Index = props => __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], null, __jsx("h1", null, "BTCEX PRO"), __jsx(_main__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
-/***/ "./scss/Layout.module.scss":
-/*!*********************************!*\
-  !*** ./scss/Layout.module.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./pages/main.js":
+/*!***********************!*\
+  !*** ./pages/main.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// Exports
-module.exports = {
-	"layout": "Layout_layout__1bJnb"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const Main = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "main__Main",
+  componentId: "sc-157w0id-0"
+})(["position:absolute;top:0;right:0;bottom:0;left:0;background:url(/img/main-bg.jpg) center center no-repeat;background-size:cover;background-attachment:fixed;opacity:.15;"]);
+
+const main = props => {
+  return __jsx(Main, null, "Hello");
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (main);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -1936,6 +2001,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 

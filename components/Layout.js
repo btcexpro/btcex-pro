@@ -1,10 +1,12 @@
 import Header from './Header';
-import scss from '../scss/Layout.module.scss';
+// import scss from '../css/Layout.module.css';
 
 const Layout = props => (
-  <div className={scss.layout}>
+  <div>
     <Header />
-    {props.children}
+    <div className="container-fluid">
+      {props.children}
+    </div>
   </div>
 );
 
