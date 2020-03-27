@@ -109,14 +109,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+const Nav = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.nav.withConfig({
+  displayName: "Header__Nav",
+  componentId: "sc-1wypvh0-0"
+})(["position:fixed;top:0;width:100%;background:black;"]);
 const Link = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a.withConfig({
   displayName: "Header__Link",
-  componentId: "sc-1wypvh0-0"
+  componentId: "sc-1wypvh0-1"
 })(["color:white !important;&:hover{color:#d4d4d4 !important;}"]);
 
 const Header = () => {
-  return __jsx("nav", {
-    className: "navbar navbar-expand-lg navbar-dark bg-primary"
+  return __jsx(Nav, {
+    className: "navbar navbar-expand-lg navbar-dark"
   }, __jsx("a", {
     className: "navbar-brand",
     href: "/"
@@ -167,7 +171,7 @@ const Header = () => {
     className: "nav-link text-center",
     href: "#"
   }, "PLATFORM"))), __jsx("span", {
-    class: "navbar-text float-right"
+    className: "navbar-text float-right"
   }, __jsx(Link, {
     className: "lang"
   }, "\u7E41"), "\uFF5C", __jsx(Link, {
@@ -191,13 +195,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import scss from '../css/Layout.module.css';
 
-const Layout = props => __jsx("div", null, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx("div", {
-  className: "container-fluid"
-}, props.children));
+
+const ChildComponent = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
+  displayName: "Layout__ChildComponent",
+  componentId: "t1qw36-0"
+})(["width:100%;padding-top:76px;"]);
+
+const Layout = props => __jsx("div", {
+  className: "container-fliud"
+}, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(ChildComponent, null, props.children));
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -1902,7 +1913,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Index = props => __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], null, __jsx("h1", null, "BTCEX PRO"), __jsx(_main__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+const Index = props => __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], null, __jsx(_main__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
@@ -1927,10 +1938,46 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const Main = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "main__Main",
   componentId: "sc-157w0id-0"
-})(["position:absolute;top:0;right:0;bottom:0;left:0;background:url(/img/main-bg.jpg) center center no-repeat;background-size:cover;background-attachment:fixed;opacity:.15;"]);
+})(["width:100%;height:calc(100vh - 76px);background:url(/img/main-bg.jpg) center center no-repeat;background-size:cover;background-attachment:fixed;background-blend-mode:saturation;"]);
+const SubHeading = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.h1.withConfig({
+  displayName: "main__SubHeading",
+  componentId: "sc-157w0id-1"
+})(["font-size:5rem;color:white;text-transform:uppercase;text-align:center;padding-top:calc(122px + 15%);@media (max-width:768px){padding-top:calc(70px + 15%);}@media (max-width:425px){padding-top:15%;}"]);
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "main__Button",
+  componentId: "sc-157w0id-2"
+})(["margin:11px;font-weight:600;font-size:1rem;padding:15px 30px;border-radius:5px;color:#FFF;box-shadow:2px 2px 3px ", ";border-color:", ";background-color:", ";"], props => props.btnColor.color, props => props.btnColor.color, props => props.btnColor.color);
+const Icon = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.i.withConfig({
+  displayName: "main__Icon",
+  componentId: "sc-157w0id-3"
+})(["font-size:1.1rem;"]);
 
 const main = props => {
-  return __jsx(Main, null, "Hello");
+  return __jsx(Main, null, __jsx("div", {
+    className: "container"
+  }, __jsx(SubHeading, null, "Move money with ", __jsx("br", null), " digital trading"), __jsx("div", {
+    className: "text-center"
+  }, __jsx("a", {
+    href: "https://wa.me/8613048899900",
+    target: "_blank"
+  }, __jsx(Button, {
+    btnColor: {
+      color: "#25d366"
+    }
+  }, "WhatsApp ", __jsx(Icon, {
+    className: "fa fa-whatsapp",
+    "aria-hidden": "true"
+  }))), __jsx("a", {
+    href: "https://t.me/BtcEX",
+    target: "_blank"
+  }, __jsx(Button, {
+    btnColor: {
+      color: "#1682FB"
+    }
+  }, "Telegram ", __jsx(Icon, {
+    className: "fa fa-telegram",
+    "aria-hidden": "true"
+  }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (main);

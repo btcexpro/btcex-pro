@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+const Nav = styled.nav`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: black;
+`;
+
 const Link = styled.a`
   color: white !important;
   &:hover {
@@ -9,7 +16,7 @@ const Link = styled.a`
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <Nav className="navbar navbar-expand-lg navbar-dark">
       <a className="navbar-brand" href="/">
         <img src="/img/btc-logo.svg" width="110" height="50" className="d-inline-block align-top" alt="" />
       </a>
@@ -34,11 +41,11 @@ const Header = () => {
             <Link className="nav-link text-center" href="#">PLATFORM</Link>
           </li>
         </ul>
-        <span class="navbar-text float-right">
+        <span className="navbar-text float-right">
           <Link className="lang">繁</Link>｜<Link className="lang">Eng</Link>
         </span>
       </div>
-    </nav>
+    </Nav>
   );
 };
 

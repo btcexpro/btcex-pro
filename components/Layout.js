@@ -1,12 +1,17 @@
 import Header from './Header';
-// import scss from '../css/Layout.module.css';
+import styled from 'styled-components';
+
+const ChildComponent = styled.div`
+  width: 100%;
+  padding-top: 76px;
+`;
 
 const Layout = props => (
-  <div>
+  <div className="container-fliud">
     <Header />
-    <div className="container-fluid">
+    <ChildComponent>
       {props.children}
-    </div>
+    </ChildComponent>
   </div>
 );
 

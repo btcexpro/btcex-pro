@@ -6,7 +6,6 @@ import Main from './main';
 
 const Index = props => (
   <Layout>
-    <h1>BTCEX PRO</h1>
     <Main />
   </Layout>
 );
