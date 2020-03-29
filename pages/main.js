@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Main = styled.div`
   width: 100%;
   height: calc(100vh - 76px);
-  background: url(/img/main-bg.jpg) center center no-repeat;
+  background: linear-gradient(black, black), url(/img/main-bg.jpg) center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: saturation;
@@ -14,10 +14,7 @@ const SubHeading = styled.h1`
   color: white;
   text-transform: uppercase;
   text-align: center;
-  padding-top: calc(122px + 15%);
-  @media (max-width: 768px) {
-    padding-top: calc(70px + 15%);
-  }
+  padding-top: calc(75px + 15%);
   @media (max-width: 425px) {
     padding-top: 15%;
   }
