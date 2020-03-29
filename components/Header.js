@@ -26,19 +26,22 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul className="navbar-nav m-auto mt-2 mt-lg-0">
           <li className="nav-item">
-            <Link className="nav-link text-center" href="#">ABOUT US</Link>
+            <Link className="nav-link text-center" href="#about">ABOUT US</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link text-center" href="#">WHO WE SERVE</Link>
+          </li> */}
+          <li className="nav-item">
+            <Link className="nav-link text-center" href="#service">SERVICES</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-center" href="#">SERVICES</Link>
+            <Link className="nav-link text-center" href="#why">WHY US</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-center" href="#">WHY US</Link>
+            <Link className="nav-link text-center" href="https://www.bxlend.com/" target="_blank">PLATFORM</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-center" href="#">PLATFORM</Link>
+            <Link className="nav-link text-center" href="#contact">CONTACT US</Link>
           </li>
         </ul>
         <span className="navbar-text float-right">
