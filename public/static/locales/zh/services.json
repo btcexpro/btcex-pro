@@ -1,0 +1,31 @@
+{
+  "heading": "Services",
+  "service_1": {
+    "heading": "IEO service / Token Listing",
+    "list_item_1": "Leverage an established platform (exchange) for marketing activities and directly addressing target audience (crypto-affine investors)",
+    "list_item_2": "Delegate management of funding process, incl. cybersecurity and KYC/AML, high dependency on exchange for success",
+    "list_item_3": "Leverage exchange’s brand to “certify“legitimacy/potential of project",
+    "list_item_4": "Focus on core capabilities, e.g. technology development, product rollout",
+    "list_item_5": "Outsource funding process"
+  },
+  "service_2": {
+    "heading": "Settlement Frameworks for Mining",
+    "list_item_1": "Schedule a consultation with us to discuss your optimal mining settlement framework setup."
+  },
+  "service_3": {
+    "heading": "Mining Hardware purchase",
+    "para": "We cooperate to worldwide bitcoin mining firm to provide one time package service for you start your bitcoin mining investment. Our mining server is an efficient bitcoin mining server designed for small, medium and enterprise-grade investors.",
+    "list_item_1": "Buy - Order your miner machine",
+    "list_item_2": "Connect - Connect them to our partnership electricity and internet centre",
+    "list_item_3": "Setup - Set up your miner with a mining pool",
+    "list_item_4": "Profits - Begin receiving Bitcon"
+  },
+  "service_4": {
+    "heading": "Smart Contract Development & Auditing",
+    "para": "Smart contracts handle the fundraiser on the Blockchain, the issuance and on going management of the coins, and decentralized applications (dapps Developers of smart contracts should:",
+    "list_item_1": "Build automated code scans into their continuous integration pipeline.",
+    "list_item_2": "Commission independent code reviews by skilled researchers and code auditors for major releases.",
+    "list_item_3": "Implement formalized software development & testing controls, including sufficient segregation of duties and sign off before going live More and more Blockchains support formal verification in their smart contract platform natively.",
+    "list_item_4": "SpankChain; loses USD 40’000 in hack due to Smart Contract bug. (9th October 2018)."
+  }
+}

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { withTranslation } from '../i18n';
+
 const AboutContent = styled.div`
   margin: 0 auto;
   padding-top: 15%;
@@ -17,19 +19,26 @@ const Hr = styled.hr`
   background-color: #908f8f;
 `;
 
-const about = () => {
+const about = ({ t }) => {
   return (
     <AboutContent className="container" id="about">
-      <Heading>About Us</Heading>
+      <Heading>{t('heading')}</Heading>
       <div>
         <span><Hr/></span>
       </div>
       <div className="mt-5">
-        <p className="text-center">BtcEX is Hong Kong's leading cryptocurrency exchange provider since October 2016. We provide a secure, liquidity & stable banking solution platform to allow customers to trade safely and be able to quickly withdrawals from the exchange.</p>
-        <p className="text-center">BtcEX offers you a secure USD & HKD and cryptocurrency deposit & withdrawal. Your funds and crypto are safe and the deposits & withdrawals are processed through a secure channel.</p>
+        <p>{t('para1')}</p>
+        <p>{t('para2')}</p>
+        <h5>{t('heading1')}</h5>
+        <ul className="list-styled">
+          <li>{t('list.item1')}</li>
+          <li>{t('list.item2')}</li>
+        </ul>
+        <h5>{t('heading2')}</h5>
+        <p>{t('para3')}</p>
       </div>
     </AboutContent>
   );
 };
 
-export default about;
+export default withTranslation('about')(about);

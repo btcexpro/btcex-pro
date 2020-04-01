@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { withTranslation } from '../i18n';
+
 const WhyContent = styled.div`
   margin: 0 auto;
   padding-top: 15%;
@@ -17,20 +19,20 @@ const Hr = styled.hr`
   background-color: #908f8f;
 `;
 
-const why = () => {
+const why = ({ t }) => {
   return (
     <WhyContent id="why">
       <div className="container">
-        <Heading>Why Us</Heading>
+        <Heading>{t('heading')}</Heading>
         <div>
           <span><Hr/></span>
         </div>
         <div className="mt-5">
-          <h4 className="text-center">BtcEX has a proven track record since 2016</h4>
+          <h4 className="text-center">{t('main_text')}</h4>
         </div>
       </div>
     </WhyContent>
   );
 };
 
-export default why;
+export default withTranslation('why')(why);

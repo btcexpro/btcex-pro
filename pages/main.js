@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { withTranslation } from '../i18n';
+
 const Main = styled.div`
   width: 100%;
   height: calc(100vh - 76px);
@@ -36,12 +38,12 @@ const Icon = styled.i`
   font-size: 1.1rem;
 `;
 
-const main = (props) => {
+const main = ({ t }) => {
   return (
     <Main>
       <div className="container">
         <SubHeading>
-          Move money with <br /> digital trading
+          {t('heading')}
         </SubHeading>
         <div className="text-center">
           <a href="https://wa.me/8613048899900" target="_blank">
@@ -56,4 +58,4 @@ const main = (props) => {
   );
 };
 
-export default main;
+export default withTranslation('main')(main);

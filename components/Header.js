@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
+import { withTranslation } from '../i18n';
+
 const Nav = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
   background: black;
+  z-index: 1;
 `;
 
 const Link = styled.a`
@@ -14,7 +17,7 @@ const Link = styled.a`
   }
 `;
 
-const Header = () => {
+const Header = ({ t }) => {
   return (
     <Nav className="navbar navbar-expand-lg navbar-dark">
       <a className="navbar-brand" href="/">
@@ -26,30 +29,36 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul className="navbar-nav m-auto mt-2 mt-lg-0">
           <li className="nav-item">
-            <Link className="nav-link text-center" href="#about">ABOUT US</Link>
-          </li>
-          {/* <li className="nav-item">
-            <Link className="nav-link text-center" href="#">WHO WE SERVE</Link>
-          </li> */}
-          <li className="nav-item">
-            <Link className="nav-link text-center" href="#service">SERVICES</Link>
+            <Link className="nav-link text-center" href="#fee">{t('menu_1')}</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-center" href="#why">WHY US</Link>
+            <Link className="nav-link text-center" href="#howToTrade">{t('menu_2')}</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-center" href="https://www.bxlend.com/" target="_blank">PLATFORM</Link>
+            <Link className="nav-link text-center" href="#about">{t('menu_3')}</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-center" href="#contact">CONTACT US</Link>
+            <Link className="nav-link text-center" href="#service">{t('menu_4')}</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-center" href="#why">{t('menu_5')}</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-center" href="https://www.bxlend.com/" target="_blank">{t('menu_6')}</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-center" href="#faq">{t('menu_7')}</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-center" href="#contact">{t('menu_8')}</Link>
           </li>
         </ul>
         <span className="navbar-text float-right">
-          <Link className="lang">繁</Link>｜<Link className="lang">Eng</Link>
+          <Link className="lang" onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en')}>繁</Link>｜<Link className="lang">Eng</Link>
         </span>
       </div>
     </Nav>
   );
 };
 
-export default Header;
+export default withTranslation('header')(Header);
