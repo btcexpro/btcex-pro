@@ -11,6 +11,13 @@
   },
   "list_item_3": {
     "name": "Address",
-    "description": "Unit B&C, 11/F Tai Cheung Factory Building No.3 Wing Ming St, Lai Chi Kok"
-  }
+    "description": "Unit B10 of 11 Floor, Tai Cheung Factory Building No.3 Wing Ming St, Lai Chi Kok"
+  },
+  "list_item_4": {
+    "name": "Email",
+    "description": "info@btcex.pro"
+  },
+  "copyright": "Copyright © BtcEX All rights reserved.",
+  "privacy": "Privacy Policy",
+  "terms": "Terms and Conditions"
 }

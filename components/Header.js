@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { withTranslation } from '../i18n';
+import { i18n, withTranslation } from '../i18n';
 
 const Nav = styled.nav`
   position: fixed;
@@ -53,8 +53,8 @@ const Header = ({ t }) => {
             <Link className="nav-link text-center" href="#contact">{t('menu_8')}</Link>
           </li>
         </ul>
-        <span className="navbar-text float-right">
-          <Link className="lang" onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en')}>繁</Link>｜<Link className="lang">Eng</Link>
+        <span className="navbar-text float-right" style={{ cursor: 'pointer' }}>
+          <Link className="lang" onClick={() => {i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en'); window.location.reload();}}>{i18n.language === 'en' ? '繁' : 'Eng'}</Link>
         </span>
       </div>
     </Nav>

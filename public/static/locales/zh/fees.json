@@ -1,9 +1,9 @@
 {
-  "heading": "Real-time Quote",
+  "heading": "加密貨幣兌換價",
   "table_heading": {
-    "col_1": "Symbol",
-    "col_2": "Currency",
-    "col_3": "Ask",
-    "col_4": "Bid"
+    "col_1": "符號",
+    "col_2": "貨幣",
+    "col_3": "買入",
+    "col_4": "賣出"
   }
 }

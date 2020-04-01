@@ -6,5 +6,5 @@ module.exports = new NextI18Next({
   strictMode: false,
   // workaround until next-i18next support public path
   // https://github.com/isaachinman/next-i18next/issues/523
-  localePath: typeof window === "undefined" ? "/public/static/locales" : "locales"
+  // localePath: typeof window === "undefined" ? "/public/static/locales" : "/public/static/locales"
 });

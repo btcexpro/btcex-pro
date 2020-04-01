@@ -31,7 +31,7 @@ const fee = ({ fees, t }) => {
           <table className="table table-hover text-center">
             <thead>
               <tr>
-                <th scope="col">{t('table_heading.col_1')}</th>
+                <th scope="col"></th>
                 <th scope="col">{t('table_heading.col_2')}</th>
                 <th scope="col" className="bg-success text-white">{t('table_heading.col_3')}</th>
                 <th scope="col" className="bg-danger text-white">{t('table_heading.col_4')}</th>
@@ -43,7 +43,7 @@ const fee = ({ fees, t }) => {
                   return (
                     <tr key={fee.id}>
                       <td scope="row"><img src={fee.image} width="25" alt="currency symbol" /></td>
-                      <th>{fee.name} ({fee.symbol.toUpperCase()})</th>
+                      <td><strong>{fee.symbol.toUpperCase()}</strong> ({fee.name})</td>
                       <td className="text-success">{fee.ask.toFixed(3)}</td>
                       <td className="text-danger">{fee.bid.toFixed(3)}</td>
                     </tr>

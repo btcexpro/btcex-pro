@@ -1,16 +1,23 @@
 {
-  "heading": "Contact Us",
-  "text": "If you have any questions, please contact us by:",
+  "heading": "聯繫我們",
+  "text": "如有任何疑問，請通過:",
   "list_item_1": {
-    "name": "WhatsApp",
+    "name": "WhatsApp交易",
     "description": ""
   },
   "list_item_2": {
-    "name": "Telegram",
+    "name": "電報交易",
     "description": ""
   },
   "list_item_3": {
-    "name": "Address",
-    "description": "Unit B&C, 11/F Tai Cheung Factory Building No.3 Wing Ming St, Lai Chi Kok"
-  }
+    "name": "地址",
+    "description": "荔枝角永明街3號大昌工廠大廈11樓B10室"
+  },
+  "list_item_4": {
+    "name": "電子郵件",
+    "description": "info@btcex.pro"
+  },
+  "copyright": "版權所有©BtcEX保留所有權利。",
+  "privacy": "隱私政策",
+  "terms": "服務條款"
 }

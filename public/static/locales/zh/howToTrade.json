@@ -1,15 +1,15 @@
 {
-  "heading": "How To Trade",
+  "heading": "如何交易",
   "step_1": {
-    "heading": "MESSAGE US",
-    "para": "Message us on Whatsapp or Telegram and tell us what you would like to trade. We will give you a quotation. First time needs to fill in an account opening form."
+    "heading": "報價",
+    "para": "通過Whatsapp和電報獲得報價，提供要購買/出售的加密貨幣。 第一次需要提交身份證和地址（3個月）。"
   },
   "step_2": {
-    "heading": "TRANSFER",
-    "para": "Transfer the payment to the account we provided within 10 mins."
+    "heading": "轉帳",
+    "para": "請於10分鐘內轉帳到我們提供的賬戶或錢包地址。"
   },
   "step_3": {
-    "heading": "COMPLETE",
-    "para": "When we have confirmed your transaction, we will transfer the cryptocurrecy to the address you provided."
+    "heading": "交易完成",
+    "para": "當確認您的付款/加密貨幣存入後，我們會轉帳到您提供的地址/銀行帳戶。"
   }
 }

@@ -47,10 +47,10 @@ const main = ({ t }) => {
         </SubHeading>
         <div className="text-center">
           <a href="https://wa.me/8613048899900" target="_blank">
-            <Button btnColor={{ color: "#25d366" }}>WhatsApp <Icon className="fa fa-whatsapp" aria-hidden="true" /></Button>
+            <Button btnColor={{ color: "#25d366" }}>{t('button1')} <Icon className="fa fa-whatsapp" aria-hidden="true" /></Button>
           </a>
           <a href="https://t.me/BtcEX" target="_blank">
-            <Button btnColor={{ color: "#1682FB" }}>Telegram <Icon className="fa fa-telegram" aria-hidden="true" /></Button>
+            <Button btnColor={{ color: "#1682FB" }}>{t('button2')} <Icon className="fa fa-telegram" aria-hidden="true" /></Button>
           </a>
         </div>
       </div>

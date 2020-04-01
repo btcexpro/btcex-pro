@@ -35,36 +35,36 @@ const faq = ({ t }) => {
             <div className="card bg-dark mb-2">
                 <div className="card-header" id="headingOne">
                     <h2 className="mb-0">
-                      <button type="button" className="btn text-white w-100 text-left" data-toggle="collapse" data-target="#collapseOne">{t("1.question")}</button>									
+                      <button type="button" className="btn text-white w-100 text-left" data-toggle="collapse" data-target="#collapseOne">{t("4.question")}</button>									
                     </h2>
                 </div>
                 <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div className="card-body">
-                        <p>{t("1.answer")}</p>
+                        <p>{t("4.answer")}</p>
                     </div>
                 </div>
             </div>
             <div className="card bg-dark mb-2">
                 <div className="card-header" id="headingTwo">
                     <h2 className="mb-0">
-                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseTwo">{t("2.question")}</button>
+                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseTwo">{t("5.question")}</button>
                     </h2>
                 </div>
                 <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div className="card-body">
-                        <p>{t("2.answer")}</p>
+                        <p>{t("5.answer")}</p>
                     </div>
                 </div>
             </div>
             <div className="card bg-dark mb-2">
                 <div className="card-header" id="headingThree">
                     <h2 className="mb-0">
-                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseThree">{t("3.question")}</button>                     
+                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseThree">{t("2.question")}</button>                     
                     </h2>
                 </div>
                 <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div className="card-body">
-                        <p>{t("3.answer")}</p>
+                        <p>{t("2.answer")}</p>
                     </div>
                 </div>
             </div>
