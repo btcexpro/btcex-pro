@@ -54,7 +54,7 @@ const Header = ({ t }) => {
           </li>
         </ul>
         <span className="navbar-text float-right" style={{ cursor: 'pointer' }}>
-          <Link className="lang" onClick={() => {i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en'); window.location.reload();}}>{i18n.language === 'en' ? '繁' : 'Eng'}</Link>
+          <Link className="lang" onClick={() => {i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en')}}>{i18n.language === 'en' ? '繁' : 'Eng'}</Link>
         </span>
       </div>
     </Nav>

@@ -1,3 +1,5 @@
+import React from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 import { withTranslation } from '../i18n';
@@ -19,43 +21,82 @@ const Hr = styled.hr`
   background-color: #908f8f;
 `;
 
-const fee = ({ fees, t }) => {
-  return (
-    <FeesContent id="fee">
-      <div className="container">
-        <Heading>{t('heading')}</Heading>
-        <div>
-          <span><Hr/></span>
-        </div>
-        <div className="mt-5">
-          <table className="table table-hover text-center">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">{t('table_heading.col_2')}</th>
-                <th scope="col" className="bg-success text-white">{t('table_heading.col_3')}</th>
-                <th scope="col" className="bg-danger text-white">{t('table_heading.col_4')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                fees.map(fee => {
-                  return (
-                    <tr key={fee.id}>
-                      <td scope="row"><img src={fee.image} width="25" alt="currency symbol" /></td>
-                      <td><strong>{fee.symbol.toUpperCase()}</strong> ({fee.name})</td>
-                      <td className="text-success">{fee.ask.toFixed(3)}</td>
-                      <td className="text-danger">{fee.bid.toFixed(3)}</td>
-                    </tr>
-                  );
-                })
-              }
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </FeesContent>
-  );
-};
+class Fee extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fees: [],
+      vs_currency: 'hkd'
+    };
+    this.handleFetchFees = this.handleFetchFees.bind(this);
+    this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
+  }
 
-export default withTranslation('fees')(fee);
+  componentDidMount() {
+    this.handleFetchFees();
+  }
+
+  handleCurrencyChange (e) {
+    const { value } = e.target;
+    this.setState({ vs_currency: value }, this.handleFetchFees);
+  }
+
+  async handleFetchFees () {
+    const { vs_currency } = this.state;
+    try {
+      const res = await axios.get(`http://192.168.1.101:3000/coins/markets?vs_currency=${vs_currency}`);
+      this.setState({ fees: res.data });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  render () {
+    const { fees, vs_currency } = this.state;
+    const { t } = this.props;
+    return (
+      <FeesContent id="fee">
+        <div className="container">
+          <Heading>{t('heading')}</Heading>
+          <div>
+            <span><Hr/></span>
+          </div>
+          <div className="mt-5">
+            <div className="btn-group mb-1">
+              <select className="custom-select bg-success text-white" onChange={(e) => this.handleCurrencyChange(e)}>
+                <option value="hkd">HKD</option>
+                <option value="usd">USD</option>
+              </select>
+            </div>
+            <table className="table table-hover text-center">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">{t('table_heading.col_2')}</th>
+                  <th scope="col" className="bg-success text-white">{t('table_heading.col_3')} ({vs_currency.toUpperCase()})</th>
+                  <th scope="col" className="bg-danger text-white">{t('table_heading.col_4')} ({vs_currency.toUpperCase()})</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  fees.map(fee => {
+                    return (
+                      <tr key={fee.id}>
+                        <td scope="row"><img src={fee.image} width="25" alt="currency symbol" /></td>
+                        <td><strong>{fee.symbol.toUpperCase()}</strong> ({fee.name})</td>
+                        <td className="text-success">{fee.ask.toFixed(3)}</td>
+                        <td className="text-danger">{fee.bid.toFixed(3)}</td>
+                      </tr>
+                    );
+                  })
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </FeesContent>
+    );
+  }
+}
+
+export default withTranslation('fees')(Fee);

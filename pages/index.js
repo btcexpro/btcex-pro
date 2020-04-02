@@ -15,7 +15,7 @@ const Index = props => {
   return (
     <Layout>
       <Main />
-      <Fees fees={props.fees} />
+      <Fees />
       <HowToTrade />
       <About />
       <Service />
@@ -27,19 +27,9 @@ const Index = props => {
 };
 
 Index.getInitialProps = async function() {
-  const result = {
-    namespacesRequired: ['about', 'common', 'contact', 'faq', 'fees', 'header', 'howToTrade', 'main', 'services', 'why'],
-    fees: []
+  return {
+    namespacesRequired: ['about', 'common', 'contact', 'faq', 'fees', 'header', 'howToTrade', 'main', 'services', 'why']
   };
-  try {
-    const res = await fetch('http://localhost:3000/coins/markets');
-    const data = await res.json();
-    result.fees = data;
-  } catch (err) {
-    console.log(err);
-  } finally {
-    return result;
-  }
 };
 
 export default Index;
