@@ -1,4 +1,5 @@
 const express = require("express");
+const http = require('http');
 const next = require("next");
 const axios = require('axios');
 const CoinGecko = require('coingecko-api');
@@ -14,7 +15,13 @@ const handle = app.getRequestHandler();
 
 const CoinGeckoClient = new CoinGecko();
 app.prepare().then(() => {
+  
   const server = express();
+  const httpServer = http.Server(server);
+  const io = require('socket.io')(httpServer);
+  io.on('connection', function(socket) {
+    console.log('a user connected');
+  });
 
   server.use(nextI18NextMiddleware(nextI18next));
 
