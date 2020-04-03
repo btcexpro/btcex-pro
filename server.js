@@ -5,7 +5,7 @@ const CoinGecko = require('coingecko-api');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 
 const nextI18next = require('./i18n');
-const { getComissionRates } = require('./comissionhandler');
+const { getComissionRates, addComission } = require('./comissionhandler');
 
 const port = parseInt(process.env.PORT, 10) || 5000;
 const dev = process.env.NODE_ENV !== "production";
@@ -19,15 +19,16 @@ app.prepare().then(() => {
   server.use(nextI18NextMiddleware(nextI18next));
 
   server.get('/fees', async (req, res) => {
-    try{
+    const { vs_currency } = req.query;
+    try {
       let resp = await CoinGeckoClient.coins.markets({
-        vs_currency: 'usd',
+        vs_currency,
         ids: ['bitcoin,ethereum,tether,bitcoin-cash,monero,tron,dash,ethereum-classic,neo,zcash,icon']
       });
+      const coins = resp.data;
       const rates = await getComissionRates();
-      // add comission.
-      console.log("RR", rates);
-      res.status(200).send(resp.data);
+      const finalRes = addComission(rates, coins);
+      res.status(200).send(finalRes);
     } catch(err) {
       res.status(400).send(err);
     }

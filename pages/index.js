@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import fetch from 'isomorphic-unfetch';
-
 import Layout from '../components/Layout';
 import Main from './main';
 import About from './about';
