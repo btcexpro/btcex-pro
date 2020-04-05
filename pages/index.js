@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import io from 'socket.io-client';
 
 import Layout from '../components/Layout';
 import Main from './main';
@@ -22,13 +21,6 @@ class Index extends Component {
       namespacesRequired: ['about', 'common', 'contact', 'faq', 'fees', 'header', 'howToTrade', 'main', 'services', 'why']
     };
   }
-
-  // componentDidMount() {
-  //   this.socket = io();
-  //   this.socket.on('connection', () => {
-  //     console.log("Did mount client connected");
-  //   });
-  // }
 
   render () {
     return (

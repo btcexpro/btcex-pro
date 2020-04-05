@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import io from 'socket.io-client';
 
 import { withTranslation } from '../i18n';
 
@@ -34,11 +35,23 @@ class Fee extends React.Component {
 
   componentDidMount() {
     this.handleFetchFees();
+    this.socket = io('http://localhost:5000');
+    this.socket.on('connect', (socket) => {
+      console.log("Connected with server");
+    });
+
+    this.socket.on('update', (data) => {
+        console.log("update event", data);
+        this.setState({ fees: data });
+    });
   }
 
   handleCurrencyChange (e) {
     const { value } = e.target;
-    this.setState({ vs_currency: value }, this.handleFetchFees);
+    this.setState({ vs_currency: value }, () => {
+      this.handleFetchFees();
+      // this.socket.emit('currencyChange', { new_currency: value });
+    });
   }
 
   async handleFetchFees () {
