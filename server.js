@@ -1,12 +1,12 @@
 const express = require("express");
 const http = require('http');
 const next = require("next");
-const axios = require('axios');
 const CoinGecko = require('coingecko-api');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 
 const nextI18next = require('./i18n');
 const { getComissionRates, addComission } = require('./comissionhandler');
+const socketHandler = require('./sockethandler');
 
 const port = parseInt(process.env.PORT, 10) || 5000;
 const dev = process.env.NODE_ENV !== "production";
@@ -14,15 +14,9 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const server = express();
-const httpServer = http.Server(server);
-const io = require('socket.io')(httpServer);
 
-io.on('connect', (socket) => {
-  socket.emit('now', {
-    message: "Hoolwsd"
-  });
-  console.log('a user connected');
-});
+const httpServer = http.createServer(server);
+const io = require('socket.io')(httpServer);
 
 const CoinGeckoClient = new CoinGecko();
 app.prepare().then(() => {
@@ -44,12 +38,12 @@ app.prepare().then(() => {
       res.status(400).send(err);
     }
   });
-
+  io.on('connect', socketHandler);
   server.all('*', (req, res) => {
     return handle(req, res)
   });
 
-  server.listen(port, err => {
+  httpServer.listen(port, err => {
     if (err) {
       throw err;
     }
