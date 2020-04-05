@@ -1,3 +1,6 @@
+import React, { Component } from 'react';
+import io from 'socket.io-client';
+
 import Layout from '../components/Layout';
 import Main from './main';
 import About from './about';
@@ -8,25 +11,39 @@ import Fees from './fees';
 import Faq from './faq';
 import HowToTrade from './howToTrade';
 
-const Index = props => {
-  return (
-    <Layout>
-      <Main />
-      <Fees />
-      <HowToTrade />
-      <About />
-      <Service />
-      <Why />
-      <Faq />
-      <Contact />
-    </Layout>
-  );
-};
+class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-Index.getInitialProps = async function() {
-  return {
-    namespacesRequired: ['about', 'common', 'contact', 'faq', 'fees', 'header', 'howToTrade', 'main', 'services', 'why']
-  };
-};
+  static async getInitialProps() {
+    return {
+      namespacesRequired: ['about', 'common', 'contact', 'faq', 'fees', 'header', 'howToTrade', 'main', 'services', 'why']
+    };
+  }
+
+  // componentDidMount() {
+  //   this.socket = io();
+  //   this.socket.on('connection', () => {
+  //     console.log("Did mount client connected");
+  //   });
+  // }
+
+  render () {
+    return (
+      <Layout>
+        <Main />
+        <Fees />
+        <HowToTrade />
+        <About />
+        <Service />
+        <Why />
+        <Faq />
+        <Contact />
+      </Layout>
+    );
+  }
+}
 
 export default Index;

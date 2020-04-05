@@ -6,8 +6,9 @@ import { appWithTranslation } from '../i18n';
 
 class MyApp extends App {
   componentDidMount() {
+    console.log("_app.js");
     const socket = io();
-    socket.on('connection', (socket) => {
+    socket.on('now', (socket) => {
       console.log("Connected with server");
     });
     socket.on('update', () => {

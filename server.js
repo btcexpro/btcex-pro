@@ -13,16 +13,20 @@ const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const server = express();
+const httpServer = http.Server(server);
+const io = require('socket.io')(httpServer);
+
+io.on('connect', (socket) => {
+  socket.emit('now', {
+    message: "Hoolwsd"
+  });
+  console.log('a user connected');
+});
+
 const CoinGeckoClient = new CoinGecko();
 app.prepare().then(() => {
   
-  const server = express();
-  const httpServer = http.Server(server);
-  const io = require('socket.io')(httpServer);
-  io.on('connection', function(socket) {
-    console.log('a user connected');
-  });
-
   server.use(nextI18NextMiddleware(nextI18next));
 
   server.get('/fees', async (req, res) => {
