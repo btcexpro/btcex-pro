@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-const binURL = "https://api.jsonbin.io/b/5e87596f4f5f49640ba354ac";
+const binURL = "https://api.jsonbin.io/b/5e89bda185182d79b063e1ad";
 const API_KEY = "$2b$10$OH1Y7fRnO760sJQfsYIl4uxoppBNa/LMZ8Q2cpOUxiR48Ly61DERW";
 
-const RATES = null;
+let RATES = null;
 
 exports.getComissionRates = async () => {
   try {
@@ -20,7 +20,8 @@ exports.getComissionRates = async () => {
     };
     
     const res = await axios.get(binURL, params);
-    return res.data;
+    RATES = res.data;
+    return RATES;
   } catch (err) {
     console.log(err);
   }
