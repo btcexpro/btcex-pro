@@ -41,7 +41,7 @@ class Fee extends React.Component {
     });
 
     this.socket.on('update', (data) => {
-        console.log("update event", data);
+        // console.log("update event", data);
         this.setState({ fees: data });
     });
   }
@@ -75,12 +75,12 @@ class Fee extends React.Component {
             <span><Hr/></span>
           </div>
           <div className="mt-5">
-            <div className="btn-group mb-1">
+            {/* <div className="btn-group mb-1">
               <select className="custom-select bg-success text-white" onChange={(e) => this.handleCurrencyChange(e)}>
                 <option value="hkd">HKD</option>
                 <option value="usd">USD</option>
               </select>
-            </div>
+            </div> */}
             <table className="table table-hover text-center">
               <thead>
                 <tr>
