@@ -97,10 +97,11 @@ class Fee extends React.Component {
                   fees.map(fee => {
                     return (
                       <tr key={fee.id}>
-                        <td scope="row"><img src={fee.image} width="25" alt="currency symbol" /></td>
-                        <td><strong>{fee.symbol.toUpperCase()}</strong> ({fee.name})</td>
-                        <td className="text-success">{fee.ask.toFixed(3)}</td>
-                        <td className="text-danger">{fee.bid.toFixed(3)}</td>
+                        <td colSpan="2" scope="row" style={{ textAlign: 'left' }}>
+				<img style={{marginRight: '10px' }} src={fee.image} width="25" alt="currency symbol" />
+				<strong>{fee.symbol.toUpperCase()}</strong> ({fee.name})</td>
+                        <td style={{ textAlign: 'right' }} className="text-success">{fee.ask.toFixed(2)}</td>
+                        <td style={{ textAlign: 'right' }} className="text-danger">{fee.bid.toFixed(2)}</td>
                       </tr>
                     );
                   })
