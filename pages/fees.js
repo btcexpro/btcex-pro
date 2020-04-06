@@ -35,7 +35,7 @@ class Fee extends React.Component {
 
   componentDidMount() {
     this.handleFetchFees();
-    this.socket = io('http://localhost:5000');
+    this.socket = io();
     this.socket.on('connect', (socket) => {
       console.log("Connected with server");
     });
@@ -59,7 +59,7 @@ class Fee extends React.Component {
   async handleFetchFees () {
     const { vs_currency } = this.state;
     try {
-      const res = await axios.get(`http://localhost:5000/fees?vs_currency=${vs_currency}`);
+      const res = await axios.get(`/fees?vs_currency=${vs_currency}`);
       this.setState({ fees: res.data });
     } catch (err) {
       console.log(err);
