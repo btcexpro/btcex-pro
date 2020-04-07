@@ -1,6 +1,7 @@
 const express = require("express");
 const http = require('http');
 const next = require("next");
+require('dotenv').config()
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 
 const nextI18next = require('./i18n');
