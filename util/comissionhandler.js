@@ -37,8 +37,8 @@ exports.addComission = (rates, coins) => {
         symbol: coin.symbol,
         name: coin.name,
         image: coin.image,
-        ask: (coin.current_price + coin.current_price * rates[coin.symbol.toUpperCase()].BUY),
-        bid: (coin.current_price + coin.current_price * rates[coin.symbol.toUpperCase()].SELL),
+        ask: (coin.current_price * ((100 - rates[coin.symbol.toUpperCase()].BUY) / 100)),
+        bid: (coin.current_price * ((100 + rates[coin.symbol.toUpperCase()].SELL) / 100)),
       };
     }
   }).sort((a, b) => a.symbol.localeCompare(b.symbol));
