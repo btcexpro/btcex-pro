@@ -98,8 +98,8 @@ class Fee extends React.Component {
                     return (
                       <tr key={fee.id}>
                         <td colSpan="2" scope="row" style={{ textAlign: 'left' }}>
-				<img style={{marginRight: '10px' }} src={fee.image} width="25" alt="currency symbol" />
-				<strong>{fee.symbol.toUpperCase()}</strong> ({fee.name})</td>
+                          <img style={{marginRight: '10px' }} src={fee.image} width="25" alt="currency symbol" />
+                          <strong>{fee.symbol.toUpperCase()}</strong> ({fee.name})</td>
                         <td style={{ textAlign: 'right' }} className="text-success">{fee.ask.toFixed(2)}</td>
                         <td style={{ textAlign: 'right' }} className="text-danger">{fee.bid.toFixed(2)}</td>
                       </tr>
