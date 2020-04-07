@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-const binURL = "https://api.jsonbin.io/b/5e89bda185182d79b063e1ad";
-const API_KEY = "$2b$10$OH1Y7fRnO760sJQfsYIl4uxoppBNa/LMZ8Q2cpOUxiR48Ly61DERW";
+const binURL = `https://api.jsonbin.io/b/${process.env.BIN_ID}`;
+const JSONBIN_API_SECRET = process.env.JSONBIN_API_SECRET;
 
 let RATES = null;
 
@@ -15,7 +15,7 @@ exports.getComissionRates = async () => {
   
     const params = {
       headers: {
-        "secret-key": API_KEY,
+        "secret-key": JSONBIN_API_SECRET,
       }
     };
     
@@ -24,6 +24,8 @@ exports.getComissionRates = async () => {
     return RATES;
   } catch (err) {
     console.log(err);
+    // if api fails return last fetched rates
+    return RATES;
   }
 };
 
