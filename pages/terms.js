@@ -28,7 +28,7 @@ const terms = () => {
         <div className="mt-5">
           <p>These Terms of Use (hereinafter the "Terms") are prepared by Hong Kong Special Administrative Region, company incorporated in the jurisdiction of the HKSAR (hereinafter the “Company’’).</p>
 
-          <p>Your use of the website or another website or application used by the Website or Domain <a href="https://btcex.pro">https://btcex.pro</a> (hereinafter the “​Site​”) presumes your consent to the Terms.</p>
+          <p>Your use of the website or another website or application used by the Website or Domain <a href="https://otc.btcex.pro">https://otc.btcex.pro</a> (hereinafter the “​Site​”) presumes your consent to the Terms.</p>
 
           <p>The Company may change the Terms at any time. The Company may inform you of the changes to the Terms using the available means of communication. The Company recommends you to check the Site frequently to see the actual version of the Terms their previous versions.</p>
 

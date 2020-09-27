@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const binURL = `https://api.jsonbin.io/b/${process.env.BIN_ID}`;
+const binURL = `https://api.jsonbin.io/b/${process.env.BIN_ID}/latest`;
 const JSONBIN_API_SECRET = process.env.JSONBIN_API_SECRET;
 
 let RATES = null;
