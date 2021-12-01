@@ -31,7 +31,7 @@ exports.getComissionRates = async () => {
 
 exports.addComission = (rates, coins) => {
   return coins.map(coin => {
-    if (rates[coin.symbol.toUpperCase()] !== undefined) {
+    if (rates?.[coin.symbol.toUpperCase()] !== undefined) {
       return {
         id: coin.id,
         symbol: coin.symbol,
