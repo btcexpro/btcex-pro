@@ -11,9 +11,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "10.x"
-  },
   "dependencies": {
     "axios": "^0.19.2",
     "coingecko-api": "^1.0.10",
