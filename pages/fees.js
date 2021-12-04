@@ -67,7 +67,7 @@ class Fee extends React.Component {
   }
 
   render () {
-    const { fees, vs_currency } = this.state;
+    const { fees=[], vs_currency } = this.state;
     const { t } = this.props.i18n
     return (
       <FeesContent id="fee">
@@ -94,7 +94,7 @@ class Fee extends React.Component {
               </thead>
               <tbody>
                 {
-                  fees.map((fee,index) => {
+                  [].map((fee,index) => {
                     return (
                       <tr key={fee?.id||index}>
                         <td colSpan="2" scope="row" style={{ textAlign: 'left' }}>
