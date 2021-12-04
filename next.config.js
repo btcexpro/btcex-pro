@@ -1,4 +1,7 @@
 module.exports = {
-    target: "serverless"
-}
-  
+    target: 'serverless',
+    i18n: {
+      defaultLocale: 'en',
+      locales: ['en', 'zh'],
+    },
+  }
