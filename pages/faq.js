@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 const FaqContent = styled.div`
   margin: 0 auto;
@@ -22,11 +22,12 @@ const Hr = styled.hr`
   background-color: #908f8f;
 `;
 
-const faq = ({ t }) => {
+const faq = () => {
+  const { t } = useTranslation('common');
   return (
     <FaqContent id="faq">
       <div className="container">
-        <Heading>{t('heading')}</Heading>
+        <Heading>{t('faq.heading')}</Heading>
         <div>
           <span><Hr/></span>
         </div>
@@ -35,36 +36,36 @@ const faq = ({ t }) => {
             <div className="card bg-dark mb-2">
                 <div className="card-header" id="headingOne">
                     <h2 className="mb-0">
-                      <button type="button" className="btn text-white w-100 text-left" data-toggle="collapse" data-target="#collapseOne">{t("4.question")}</button>									
+                      <button type="button" className="btn text-white w-100 text-left" data-toggle="collapse" data-target="#collapseOne">{t("faq.4.question")}</button>									
                     </h2>
                 </div>
                 <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div className="card-body">
-                        <p>{t("4.answer")}</p>
+                        <p>{t("faq.4.answer")}</p>
                     </div>
                 </div>
             </div>
             <div className="card bg-dark mb-2">
                 <div className="card-header" id="headingTwo">
                     <h2 className="mb-0">
-                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseTwo">{t("5.question")}</button>
+                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseTwo">{t("faq.5.question")}</button>
                     </h2>
                 </div>
                 <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div className="card-body">
-                        <p>{t("5.answer")}</p>
+                        <p>{t("faq.5.answer")}</p>
                     </div>
                 </div>
             </div>
             <div className="card bg-dark mb-2">
                 <div className="card-header" id="headingThree">
                     <h2 className="mb-0">
-                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseThree">{t("2.question")}</button>                     
+                        <button type="button" className="btn text-white w-100 text-left collapsed" data-toggle="collapse" data-target="#collapseThree">{t("faq.2.question")}</button>                     
                     </h2>
                 </div>
                 <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div className="card-body">
-                        <p>{t("2.answer")}</p>
+                        <p>{t("faq.2.answer")}</p>
                     </div>
                 </div>
             </div>
@@ -75,4 +76,4 @@ const faq = ({ t }) => {
   );
 };
 
-export default withTranslation('faq')(faq);
+export default faq;

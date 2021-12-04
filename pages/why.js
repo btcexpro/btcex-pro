@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 const WhyContent = styled.div`
   margin: 0 auto;
@@ -19,20 +19,21 @@ const Hr = styled.hr`
   background-color: #908f8f;
 `;
 
-const why = ({ t }) => {
+const why = () => {
+  const { t } = useTranslation('common');
   return (
     <WhyContent id="why">
       <div className="container">
-        <Heading>{t('heading')}</Heading>
+        <Heading>{t('why.heading')}</Heading>
         <div>
           <span><Hr/></span>
         </div>
         <div className="mt-5">
-          <h4 className="text-center">{t('main_text')}</h4>
+          <h4 className="text-center">{t('why.main_text')}</h4>
         </div>
       </div>
     </WhyContent>
   );
 };
 
-export default withTranslation('why')(why);
+export default why;

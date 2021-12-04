@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 const ContactContent = styled.div`
   margin: 0 auto;
@@ -19,30 +19,31 @@ const Hr = styled.hr`
   background-color: #908f8f;
 `;
 
-const contact = ({ t }) => {
+const contact = () => {
+  const { t } = useTranslation('common');
   return (
     <footer>
       <ContactContent id="contact">
         <div className="container">
-          <Heading>{t('heading')}</Heading>
+          <Heading>{t('contact.heading')}</Heading>
           <div>
             <span><Hr/></span>
           </div>
           <div className="row mt-5">
             <div className="col-sm-12 col-md-6">
-              {t('text')}
+              {t('contact.text')}
               <dl className="row mt-3">
-                <dt className="col-sm-3">{t('list_item_1.name')}</dt>
+                <dt className="col-sm-3">{t('contact.list_item_1.name')}</dt>
                 <dd className="col-sm-9"><a href="https://wa.me/8613048899900" target="_blank">+8613048899900</a></dd>
 
-                <dt className="col-sm-3">{t('list_item_2.name')}</dt>
+                <dt className="col-sm-3">{t('contact.list_item_2.name')}</dt>
                 <dd className="col-sm-9"><a href="https://t.me/BtcEX" target="_blank">@BtcEX</a></dd>
 
-                <dt className="col-sm-3">{t('list_item_3.name')}</dt>
-                <dd className="col-sm-9">{t('list_item_3.description')}</dd>
+                <dt className="col-sm-3">{t('contact.list_item_3.name')}</dt>
+                <dd className="col-sm-9">{t('contact.list_item_3.description')}</dd>
 
-                <dt className="col-sm-3">{t('list_item_4.name')}</dt>
-                <dd className="col-sm-9">{t('list_item_4.description')}</dd>
+                <dt className="col-sm-3">{t('contact.list_item_4.name')}</dt>
+                <dd className="col-sm-9">{t('contact.list_item_4.description')}</dd>
               </dl>
             </div>
             <div className="col-sm-12 col-md-6">
@@ -56,12 +57,12 @@ const contact = ({ t }) => {
       <div className="p-3 bg-dark text-white w-100">
         <div className="row">
           <div className="col-md-6 text-center">
-            <span>{t('copyright')}</span>
+            <span>{t('contact.copyright')}</span>
           </div>
           <div className="col-md-6 text-center">
-            <a href="/privacy" target="_blank" className="text-white">{t('privacy')}</a>
+            <a href="/privacy" target="_blank" className="text-white">{t('contact.privacy')}</a>
             <span> | </span>
-            <a href="/terms" target="_blank" className="text-white">{t('terms')}</a>
+            <a href="/terms" target="_blank" className="text-white">{t('contact.terms')}</a>
           </div>
         </div>
       </div>
@@ -69,4 +70,4 @@ const contact = ({ t }) => {
   );
 };
 
-export default withTranslation('contact')(contact);
+export default contact;

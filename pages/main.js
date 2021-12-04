@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 const Main = styled.div`
   width: 100%;
@@ -38,19 +38,20 @@ const Icon = styled.i`
   font-size: 1.1rem;
 `;
 
-const main = ({ t }) => {
+const main = () => {
+  const { t } = useTranslation('common');
   return (
     <Main>
       <div className="container">
         <SubHeading>
-          {t('heading')}
+          {t('main.heading')}
         </SubHeading>
         <div className="text-center">
           <a href="https://wa.me/8613048899900" target="_blank">
-            <Button btnColor={{ color: "#25d366" }}>{t('button1')} <Icon className="fa fa-whatsapp" aria-hidden="true" /></Button>
+            <Button btnColor={{ color: "#25d366" }}>{t('main.button1')} <Icon className="fa fa-whatsapp" aria-hidden="true" /></Button>
           </a>
           <a href="https://t.me/BtcEX" target="_blank">
-            <Button btnColor={{ color: "#1682FB" }}>{t('button2')} <Icon className="fa fa-telegram" aria-hidden="true" /></Button>
+            <Button btnColor={{ color: "#1682FB" }}>{t('main.button2')} <Icon className="fa fa-telegram" aria-hidden="true" /></Button>
           </a>
         </div>
       </div>
@@ -58,4 +59,4 @@ const main = ({ t }) => {
   );
 };
 
-export default withTranslation('main')(main);
+export default main;
