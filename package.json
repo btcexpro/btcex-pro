@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production pm2 start server.js --name otc"
+    "start": "cross-env NODE_ENV=production node server.js --name otc"
   },
   "keywords": [],
   "author": "",
