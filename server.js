@@ -21,10 +21,10 @@ app.prepare().then(() => {
   server.get('/fees', async (req, res) => {
     const { vs_currency } = req.query;
     try {
-      const coins = await getCoins(vs_currency);
-      const rates = await getComissionRates();
-      const finalRes = addComission(rates, coins);
-      res.status(200).send(finalRes);
+      // const coins = await getCoins(vs_currency);
+      // const rates = await getComissionRates();
+      // const finalRes = addComission(rates, coins);
+      res.status(200).send([]);
     } catch(err) {
       res.status(400).send(err);
     }

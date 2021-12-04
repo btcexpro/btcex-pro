@@ -12,13 +12,13 @@ exports.getComissionRates = async () => {
     if (min % 5 === 0 && RATES) {
       return RATES;
     }
-  
+
     const params = {
       headers: {
         "secret-key": JSONBIN_API_SECRET,
       }
     };
-    
+
     const res = await axios.get(binURL, params);
     RATES = res.data;
     return RATES;
@@ -30,16 +30,17 @@ exports.getComissionRates = async () => {
 };
 
 exports.addComission = (rates, coins) => {
-  return coins.map(coin => {
-    if (rates?.[coin.symbol.toUpperCase()] !== undefined) {
-      return {
-        id: coin.id,
-        symbol: coin.symbol,
-        name: coin.name,
-        image: coin.image,
-        ask: (coin.current_price * ((100 - rates[coin.symbol.toUpperCase()].BUY) / 100)),
-        bid: (coin.current_price * ((100 + rates[coin.symbol.toUpperCase()].SELL) / 100)),
-      };
-    }
-  }).sort((a, b) => a.symbol.localeCompare(b.symbol));
+  // return coins.map(coin => {
+  //   if (rates?.[coin.symbol.toUpperCase()] !== undefined) {
+  //     return {
+  //       id: coin.id,
+  //       symbol: coin.symbol,
+  //       name: coin.name,
+  //       image: coin.image,
+  //       ask: (coin.current_price * ((100 - rates[coin.symbol.toUpperCase()].BUY) / 100)),
+  //       bid: (coin.current_price * ((100 + rates[coin.symbol.toUpperCase()].SELL) / 100)),
+  //     };
+  //   }
+  // }).sort((a, b) => a.symbol.localeCompare(b.symbol));
+  return []
 }
