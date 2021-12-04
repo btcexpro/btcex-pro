@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import i18nConfig from '../i18n';
+import i18nConfig from '../i18n.json';
 import useTranslation from 'next-translate/useTranslation';
 
 const Nav = styled.nav`
@@ -19,7 +19,7 @@ const Link = styled.a`
 `;
 
 const Header = () => {
-  const { locales, defaultLocale } = i18nConfig;
+  const { locales } = i18nConfig;
   const { t, lang } = useTranslation('common');
 
   return (

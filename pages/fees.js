@@ -94,9 +94,9 @@ class Fee extends React.Component {
               </thead>
               <tbody>
                 {
-                  fees.map(fee => {
+                  fees.map((fee,index) => {
                     return (
-                      <tr key={fee?.id}>
+                      <tr key={fee?.id||index}>
                         <td colSpan="2" scope="row" style={{ textAlign: 'left' }}>
                           <img style={{marginRight: '10px' }} src={fee?.image} width="25" alt="currency symbol" />
                           <strong>{fee?.symbol?.toUpperCase()}</strong> ({fee?.name})</td>
