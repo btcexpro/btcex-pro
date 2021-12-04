@@ -15,6 +15,7 @@
     "node": "10.x"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^3.9.2",
     "axios": "^0.19.2",
     "bufferutil": "^4.0.5",
     "coingecko-api": "^1.0.10",
