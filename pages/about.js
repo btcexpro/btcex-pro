@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 const AboutContent = styled.div`
   margin: 0 auto;
@@ -19,26 +19,27 @@ const Hr = styled.hr`
   background-color: #908f8f;
 `;
 
-const about = ({ t }) => {
+const about = () => {
+  const { t } = useTranslation("common");
   return (
     <AboutContent className="container" id="about">
-      <Heading>{t('heading')}</Heading>
+      <Heading>{t('about.heading')}</Heading>
       <div>
         <span><Hr/></span>
       </div>
       <div className="mt-5">
-        <p>{t('para1')}</p>
-        <p>{t('para2')}</p>
-        <h5>{t('heading1')}</h5>
+        <p>{t('about.para1')}</p>
+        <p>{t('about.para2')}</p>
+        <h5>{t('about.heading1')}</h5>
         <ul className="list-styled">
-          <li>{t('list.item1')}</li>
-          <li>{t('list.item2')}</li>
+          <li>{t('about.list.item1')}</li>
+          <li>{t('about.list.item2')}</li>
         </ul>
-        <h5>{t('heading2')}</h5>
-        <p>{t('para3')}</p>
+        <h5>{t('about.heading2')}</h5>
+        <p>{t('about.para3')}</p>
       </div>
     </AboutContent>
   );
 };
 
-export default withTranslation('about')(about);
+export default about;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { withTranslation } from '../i18n';
+import useTranslation from 'next-translate/useTranslation';
 
 const TradeContent = styled.div`
   margin: 0 auto;
@@ -26,29 +26,30 @@ const Icon = styled.i`
   font-size: 3rem;
 `;
 
-const howToTrade = ({ t }) => {
+const howToTrade = () => {
+  const { t } = useTranslation('common');
   return (
     <TradeContent id="howToTrade">
       <div className="container">
-        <Heading>{t('heading')}</Heading>
+        <Heading>{t('howToTrade.heading')}</Heading>
         <div>
           <span><Hr/></span>
         </div>
         <div className="row mt-5">
           <div className="col-md-4">
             <p className="text-center"><Icon className="fa fa-comments" /></p>
-            <h4 className="text-center">{t('step_1.heading')}</h4>
-            <p className="text-center">{t('step_1.para')}</p>
+            <h4 className="text-center">{t('howToTrade.step_1.heading')}</h4>
+            <p className="text-center">{t('howToTrade.step_1.para')}</p>
           </div>
           <div className="col-md-4">
             <p className="text-center"><Icon className="fa fa-exchange" /></p>
-            <h4 className="text-center">{t('step_2.heading')}</h4>
-            <p className="text-center">{t('step_2.para')}</p>
+            <h4 className="text-center">{t('howToTrade.step_2.heading')}</h4>
+            <p className="text-center">{t('howToTrade.step_2.para')}</p>
           </div>
           <div className="col-md-4">
             <p className="text-center"><Icon className="fa fa-handshake-o" /></p>
-            <h4 className="text-center">{t('step_3.heading')}</h4>
-            <p className="text-center">{t('step_3.para')}</p>
+            <h4 className="text-center">{t('howToTrade.step_3.heading')}</h4>
+            <p className="text-center">{t('howToTrade.step_3.para')}</p>
           </div>
         </div>
       </div>
@@ -56,4 +57,4 @@ const howToTrade = ({ t }) => {
   );
 };
 
-export default withTranslation('howToTrade')(howToTrade);
+export default howToTrade;

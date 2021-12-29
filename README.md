@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e282b766-9eb2-4794-be66-83151f7f0bb9/deploy-status)](https://app.netlify.com/sites/gallant-payne-93a320/deploys)

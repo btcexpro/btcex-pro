@@ -2,9 +2,6 @@ const express = require("express");
 const http = require('http');
 const next = require("next");
 require('dotenv').config()
-const nextI18NextMiddleware = require('next-i18next/middleware').default;
-
-const nextI18next = require('./i18n');
 const { getComissionRates, addComission } = require('./util/comissionhandler');
 const { getCoins } = require('./util/coingecko');
 const socketHandler = require('./sockethandler');
@@ -20,16 +17,14 @@ const httpServer = http.createServer(server);
 const io = require('socket.io')(httpServer);
 
 app.prepare().then(() => {
-  
-  server.use(nextI18NextMiddleware(nextI18next));
 
   server.get('/fees', async (req, res) => {
     const { vs_currency } = req.query;
     try {
-      const coins = await getCoins(vs_currency);
-      const rates = await getComissionRates();
-      const finalRes = addComission(rates, coins);
-      res.status(200).send(finalRes);
+      // const coins = await getCoins(vs_currency);
+      // const rates = await getComissionRates();
+      // const finalRes = addComission(rates, coins);
+      res.status(200).send([]);
     } catch(err) {
       res.status(400).send(err);
     }

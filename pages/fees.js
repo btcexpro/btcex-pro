@@ -3,7 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import io from 'socket.io-client';
 
-import { withTranslation } from '../i18n';
+import withTranslation from 'next-translate/withTranslation';
 
 const FeesContent = styled.div`
   margin: 0 auto;
@@ -67,12 +67,12 @@ class Fee extends React.Component {
   }
 
   render () {
-    const { fees, vs_currency } = this.state;
-    const { t } = this.props;
+    const { fees=[], vs_currency } = this.state;
+    const { t } = this.props.i18n
     return (
       <FeesContent id="fee">
         <div className="container">
-          <Heading>{t('heading')}</Heading>
+          <Heading>{t('common:fees.heading')}</Heading>
           <div>
             <span><Hr/></span>
           </div>
@@ -87,16 +87,16 @@ class Fee extends React.Component {
               <thead>
                 <tr>
                   <th scope="col"></th>
-                  <th scope="col">{t('table_heading.col_2')}</th>
-                  <th scope="col" className="bg-success text-white">{t('table_heading.col_3')} ({vs_currency.toUpperCase()})</th>
-                  <th scope="col" className="bg-danger text-white">{t('table_heading.col_4')} ({vs_currency.toUpperCase()})</th>
+                  <th scope="col">{t('common:fees.table_heading.col_2')}</th>
+                  <th scope="col" className="bg-success text-white">{t('common:fees.table_heading.col_3')} ({vs_currency.toUpperCase()})</th>
+                  <th scope="col" className="bg-danger text-white">{t('common:fees.table_heading.col_4')} ({vs_currency.toUpperCase()})</th>
                 </tr>
               </thead>
               <tbody>
                 {
-                  fees.map(fee => {
+                  [].map((fee,index) => {
                     return (
-                      <tr key={fee?.id}>
+                      <tr key={fee?.id||index}>
                         <td colSpan="2" scope="row" style={{ textAlign: 'left' }}>
                           <img style={{marginRight: '10px' }} src={fee?.image} width="25" alt="currency symbol" />
                           <strong>{fee?.symbol?.toUpperCase()}</strong> ({fee?.name})</td>
@@ -115,4 +115,4 @@ class Fee extends React.Component {
   }
 }
 
-export default withTranslation('fees')(Fee);
+export default withTranslation(Fee);

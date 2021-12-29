@@ -12,10 +12,10 @@ module.exports = (socket) => {
       clearInterval(interval);
     }
     interval = setInterval(async () => {
-      const coins = await getCoins(new_currency);
-      const rates = await getComissionRates();
-      const updateRes = addComission(rates, coins);
-      socket.emit('update', updateRes);
+      // const coins = await getCoins(new_currency);
+      // const rates = await getComissionRates();
+      // const updateRes = addComission(rates, coins);
+      socket.emit('update', []);
     }, 60000);
   });
 }

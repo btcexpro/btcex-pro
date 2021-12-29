@@ -1,7 +1,3 @@
-module.exports = {
-    target: 'serverless',
-    i18n: {
-      defaultLocale: 'en',
-      locales: ['en', 'zh'],
-    },
-  }
+const nextTranslate = require('next-translate')
+
+module.exports = nextTranslate()
