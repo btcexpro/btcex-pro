@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import NextLink from "next/link";
 
 import i18nConfig from '../i18n.json';
 import useTranslation from 'next-translate/useTranslation';
@@ -25,7 +26,7 @@ const Header = () => {
   return (
     <Nav className="navbar navbar-expand-lg navbar-dark">
       <a className="navbar-brand" href="/">
-        <img src="/img/btc-logo.svg" width="110" height="50" className="d-inline-block align-top" alt="" />
+        <img src="/img/logo-radiant.svg" width="110" height="50" className="d-inline-block align-top" alt="" />
       </a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -60,14 +61,12 @@ const Header = () => {
         <span className="navbar-text float-right" style={{ cursor: 'pointer' }}>
           {
             locales.map((lng) => {
-              console.log("lang>>>>",lng);
-
-              if (lng === lang) return null
+              if (lng === lang) return undefined;
           
               return (
-                <Link href="/" locale={lng} key={lng}>
+                <NextLink href="/" locale={lng} key={lng}>
                   {t('header.language')}
-                </Link>
+                </NextLink>
               )
             })
           }

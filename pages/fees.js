@@ -9,7 +9,7 @@ const FeesContent = styled.div`
   margin: 0 auto;
   padding-top: 15%;
   padding-bottom: 15%;
-`; 
+`;
 
 const Heading = styled.h2`
   text-align: center;
@@ -43,12 +43,12 @@ class Fee extends React.Component {
     this.socket.emit('currencyChange', { new_currency: 'hkd' });
 
     this.socket.on('update', (data) => {
-        // console.log("update event", data);
-        this.setState({ fees: data });
+      // console.log("update event", data);
+      this.setState({ fees: data });
     });
   }
 
-  handleCurrencyChange (e) {
+  handleCurrencyChange(e) {
     const { value } = e.target;
     this.setState({ vs_currency: value }, () => {
       this.handleFetchFees();
@@ -56,7 +56,7 @@ class Fee extends React.Component {
     });
   }
 
-  async handleFetchFees () {
+  async handleFetchFees() {
     const { vs_currency } = this.state;
     try {
       const res = await axios.get(`/fees?vs_currency=${vs_currency}`);
@@ -66,24 +66,28 @@ class Fee extends React.Component {
     }
   }
 
-  render () {
-    const { fees=[], vs_currency } = this.state;
+  render() {
+    const { fees = [], vs_currency } = this.state;
     const { t } = this.props.i18n
     return (
       <FeesContent id="fee">
         <div className="container">
           <Heading>{t('common:fees.heading')}</Heading>
           <div>
-            <span><Hr/></span>
+            <span><Hr /></span>
           </div>
           <div className="mt-5">
-            <div className="btn-group mb-1">
+            {/* <div className="btn-group mb-1">
               <select className="custom-select bg-success text-white" onChange={(e) => this.handleCurrencyChange(e)}>
                 <option value="hkd">HKD</option>
                 <option value="usd">USD</option>
               </select>
+            </div> */}
+            <div class="text-center" style={{width: "800px", height: "400px",margin:"0 auto"}}>
+              <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOpVyjDKA-25rVInr9pwo9GYw0fin0hnBxHyVAHD2BvXYRbUUjIQ7AfNcRw_ysTwoX8Dk-ZoGcB73V/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="100%"></iframe>
+
             </div>
-            <table className="table table-hover text-center">
+            {/* <table className="table table-hover text-center">
               <thead>
                 <tr>
                   <th scope="col"></th>
@@ -107,7 +111,7 @@ class Fee extends React.Component {
                   })
                 }
               </tbody>
-            </table>
+            </table> */}
           </div>
         </div>
       </FeesContent>
