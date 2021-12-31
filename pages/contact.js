@@ -34,7 +34,7 @@ const contact = () => {
               {t('contact.text')}
               <dl className="row mt-3">
                 <dt className="col-sm-3">{t('contact.list_item_1.name')}</dt>
-                <dd className="col-sm-9"><a href="https://wa.me/86191512286" target="_blank">+86191512286</a></dd>
+                <dd className="col-sm-9"><a href="https://wa.me/85291512286" target="_blank">+85291512286</a></dd>
 
                 <dt className="col-sm-3">{t('contact.list_item_2.name')}</dt>
                 <dd className="col-sm-9"><a href="https://t.me/BtcEX" target="_blank">@BtcEX</a></dd>
