@@ -24,7 +24,7 @@
     },
     "list_item_3": {
       "name": "地址",
-      "description": "荔枝角永明街3號大昌工廠大廈11樓B10室"
+      "description": "香港灣仔港灣道6-8號瑞安中心16樓1601室"
     },
     "list_item_4": {
       "name": "電子郵件",
@@ -58,7 +58,7 @@
     }
   },
   "fees": {
-    "heading": "加密貨幣兌換價",
+    "heading": "Bxlend 報價",
     "table_heading": {
       "col_1": "符號",
       "col_2": "貨幣",

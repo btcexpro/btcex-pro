@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <Nav className="navbar navbar-expand-lg navbar-dark">
-      <a className="navbar-brand" href="/">
+      <a className="navbar-brand" href="/" style={{ width: "40px", overflow: "hidden" }}>
         <img src="/img/logo-radiant.svg" width="110" height="50" className="d-inline-block align-top" alt="" />
       </a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@ const Header = () => {
           {
             locales.map((lng) => {
               if (lng === lang) return undefined;
-          
+
               return (
                 <NextLink href="/" locale={lng} key={lng}>
                   {t('header.language')}

@@ -24,7 +24,7 @@
     },
     "list_item_3": {
       "name": "Address",
-      "description": "Unit B10 of 11 Floor, Tai Cheung Factory Building No.3 Wing Ming St, Lai Chi Kok"
+      "description": "Unit 1601, 16 Floor Shui On Centre, 6-8 Harbour Road, Wan Chai, Hong Kong"
     },
     "list_item_4": {
       "name": "Email",
@@ -58,7 +58,7 @@
     }
   },
   "fees": {
-    "heading": "Real-time Quote",
+    "heading": "Bxlend Quote",
     "table_heading": {
       "col_1": "Symbol",
       "col_2": "Currency",
