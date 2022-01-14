@@ -47,7 +47,7 @@ const main = () => {
           {t('main.heading')}
         </SubHeading>
         <div className="text-center">
-          <a href="https://wa.me/8613048899900" target="_blank">
+          <a href="https://wa.me/85291512286" target="_blank">
             <Button btnColor={{ color: "#25d366" }}>{t('main.button1')} <Icon className="fa fa-whatsapp" aria-hidden="true" /></Button>
           </a>
           <a href="https://t.me/BtcEX" target="_blank">
