@@ -1,0 +1,7 @@
+.input-style {
+    box-sizing: border-box;
+    width: 400px;
+    height: 60px;
+    border: 3px solid #EEEEEE;
+    border-radius: 30px;
+}

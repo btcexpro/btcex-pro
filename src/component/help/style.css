@@ -1,0 +1,19 @@
+.help-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #172a4f;
+}
+
+.help-content {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #5c5c5c;
+}
+
+@media (max-width: 768px) {
+    
+}

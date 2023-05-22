@@ -1,0 +1,47 @@
+.title-style {
+  font-size: 40px;
+  font-family: 'Inter';
+  color: #172a4f;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-top: 50px;
+}
+
+.second-title-style {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  color: #172a4f;
+}
+
+@media (max-width: 1024px) {
+  .title-style {
+    font-size: 36px;
+  }
+
+  .second-title-style {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-style {
+    font-size: 32px;
+  }
+
+  .second-title-style {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-style {
+    font-size: 30px;
+  }
+
+  .second-title-style {
+    font-size: 30px;
+    text-align: center;
+  }
+}

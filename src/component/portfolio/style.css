@@ -1,0 +1,74 @@
+.item-number {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: right;
+  color: #001131;
+}
+
+.portfolio-content {
+  font-family: 'Inter';
+  color: #001131;
+  font-style: normal;
+}
+
+.portfolio-content .title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.portfolio-content .content {
+  font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+  .item-number {
+    font-size: 40px;
+  }
+
+  .portfolio-content .title {
+    font-size: 26px;
+  }
+
+  .portfolio-content .content {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-number {
+    font-size: 32px;
+  }
+
+  .portfolio-content .title {
+    font-size: 20px;
+  }
+
+  .portfolio-content .content {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .item-number {
+    font-size: 32px;
+  }
+
+  .portfolio-content .title {
+    font-size: 20px;
+  }
+
+  .portfolio-content .content {
+    font-size: 14px;
+  }
+
+  .ms-4 {
+    margin-left: 0px !important;
+    justify-content: center;
+  }
+
+  .ms-5 {
+    margin-left: 16px !important;
+  }
+}
